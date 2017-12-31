@@ -1,3 +1,0 @@
-CONTAINER_NAME=dev.makerpay.se
-CONTAINER_TAG=makersofsweden/makerpay.se
-CONTAINER_VERSION=1.0

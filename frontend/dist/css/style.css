@@ -1,0 +1,71 @@
+.paymentSelector input[type="radio"] {
+	visibility: hidden;
+}
+
+.paymentSelector label {
+	overflow: hidden;
+	background-color: green;
+	border-radius: 10px;
+	margin: 0 auto;
+	text-align: center;
+
+	line-height: 100px;
+	height: 100px;
+	width: 100px;
+
+	display: inline-block;
+
+	cursor: pointer;
+
+	-webkit-transition: all 100ms ease-in;
+	   -moz-transition: all 100ms ease-in;
+	        transition: all 100ms ease-in;
+	-webkit-filter: brightness(1.8) grayscale(1) opacity(.7);
+	   -moz-filter: brightness(1.8) grayscale(1) opacity(.7);
+	        filter: brightness(1.8) grayscale(1) opacity(.7);
+}
+
+/*
+.paymentSelector input > input:active {
+	opacity: .9;
+}
+*/
+
+.paymentSelector input:checked + label {
+	-webkit-filter: none !important;
+	   -moz-filter: none !important;
+	        filter: none !important;
+}
+
+.paymentSelector label:hover {
+	-webkit-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	   -moz-filter: brightness(1.2) grayscale(.5) opacity(.9);
+	        filter: brightness(1.2) grayscale(.5) opacity(.9);
+}
+
+.paymentSelector img {
+	height: 80%;
+}
+
+.StripeElement {
+	background-color: white;
+	height: 40px;
+	padding: 10px 12px;
+	border-radius: 4px;
+	border: 1px solid transparent;
+	box-shadow: 0 1px 3px 0 #e6ebf1;
+	-webkit-transition: box-shadow 150ms ease;
+	transition: box-shadow 150ms ease;
+}
+
+.StripeElement--focus {
+	box-shadow: 0 1px 3px 0 #cfd7df;
+}
+
+.StripeElement--invalid {
+	border-color: #fa755a;
+}
+
+.StripeElement--webkit-autofill {
+	background-color: #fefde5 !important;
+}

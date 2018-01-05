@@ -1,0 +1,3 @@
+CONTAINER_NAME=makerpay.se-frontend
+CONTAINER_TAG=makerspace/makerpay.se-frontend
+CONTAINER_VERSION=1.0

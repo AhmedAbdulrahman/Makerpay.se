@@ -1,1 +1,3 @@
-lumen/storage
+swish/lumen/storage
+api/lumen/storage
+frontend/node_modules

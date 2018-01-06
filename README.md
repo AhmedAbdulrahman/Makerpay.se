@@ -7,12 +7,29 @@ Utvecklad av Christian Antila för Stockholm Makerspace.
 
 
 
+Kravspec
+========
+
+* Betalordrar skapas via ett skyddat API
+* Användaren kan ej redigera innehållet på en betalorder
+* Användaren kommer åt en betalorder via en skyddad URL, dvs ingen inloggning
+* Fungera tillfredsställande på följande enheter: Datorer med mus, surfplattor, mobiltelefoner, kiosk-datorer med pekskärm
+* Frontend är SPA byggd på React
+* Betalning via Swish Handel och Stripe Elements
+* Separata Docker containers för frontend, api, swish endpoint
+
+
+
 Framtidsplaner
 ==============
 
 * Bättre integrering med MakerAdmin
 * Möjlighet att påbörja och avsluta prenumerationer
 * Generera fakturor för Bankgiro-betalningar
+* Språkstöd - Möjlighet att välja språk via en selector samt att en betalorder kan ha ett fördefinierat språk lagrat i databasen
+* Vouchers, rabattkoder, gåvokort, etc
+* Möjlighet att göra tillfälliga reservationer på produkter, event-bokningar etc
+* Generera kvitton och automatiskt maila PDF (Genom MakerAdmin?)
 
 
 

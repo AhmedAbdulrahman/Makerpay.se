@@ -8,7 +8,7 @@ Utvecklad av Christian Antila för Stockholm Makerspace.
 
 
 Kravspec
-========
+--------
 
 * Betalordrar skapas via ett skyddat API
 * Användaren kan ej redigera innehållet på en betalorder
@@ -21,7 +21,7 @@ Kravspec
 
 
 Framtidsplaner
-==============
+--------------
 
 * Bättre integrering med MakerAdmin
 * Möjlighet att påbörja och avsluta prenumerationer
@@ -50,7 +50,7 @@ Skapa ett certifikat för Swish
 
 För att ta betalt med Swish krävs det ett avtal för Swish Handel med din bank. Samtidigt som ni skaffar ett avtal lägger ni även till en certifikatansvarig. Denna person har behörighet att hantera de TLS-certifikat som krävs för att kommunicera med Swish API. Den certifikatansvariga behöver inte nödvändigtvis vara en person inom er egen organisation.
 
-'''OBS''': Det är _mycket_ viktigt att du håller filerna swish.pem och swish.key hemliga. Dessa får inte läcka ut till obehöriga personer. Skulle så ske måste du omedelbart logga in på https://getswishcert.bankgirot.se/ och klicka på "Revoke" i certifikatlistan.
+**OBS**: Det är _mycket_ viktigt att du håller filerna swish.pem och swish.key hemliga. Dessa får inte läcka ut till obehöriga personer. Skulle så ske måste du omedelbart logga in på https://getswishcert.bankgirot.se/ och klicka på "Revoke" i certifikatlistan.
 
 * Generera en 2048 bitars RSA-nyckel `openssl genrsa -out swish.key 2048`
 * Generera ett CSR `openssl req -new -sha256 -key swish.key -out swish.csr`

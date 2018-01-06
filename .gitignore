@@ -1,3 +1,5 @@
 swish/lumen/storage
+swish/lumen/vendor
 api/lumen/storage
+api/lumen/vendor
 frontend/node_modules

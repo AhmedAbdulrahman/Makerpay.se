@@ -1,7 +1,7 @@
 PidFile = /var/run/hhvm/pid
 
 Server {
-	SourceRoot = /var/www/html
+	SourceRoot = /var/www/html/public
 	Port = 80
 	DefaultDocument = index.php
 	ErrorDocument404 = index.php

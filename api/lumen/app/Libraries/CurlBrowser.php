@@ -17,6 +17,7 @@ class CurlBrowser
 	private $headers = [];
 	private $runTime = 0;
 	private $url = "";
+	private $last_url = "";
 	private $method = "GET";
 	private $queryString = [];
 	private $data = null;
@@ -43,7 +44,7 @@ class CurlBrowser
 
 		if($this->verbose >= 3)
 		{
-		curl_setopt($this->curl_handle, CURLOPT_VERBOSE, true);
+			curl_setopt($this->curl_handle, CURLOPT_VERBOSE, true);
 		}
 	}
 
@@ -194,6 +195,14 @@ class CurlBrowser
 		{
 			return false;
 		}
+	}
+
+	/**
+	 * Return the raw HTML result
+	 */
+	public function getResult()
+	{
+		return $this->html;
 	}
 
 	/**
@@ -353,6 +362,9 @@ class CurlBrowser
 		return new DOMXPath($page);
 	}
 
+	/**
+	 *
+	 */
 	private function _checkStatusCode()
 	{
 		// Check HTTP status code
@@ -373,5 +385,47 @@ class CurlBrowser
 			echo $this->html;
 			throw(new Exception("Received a {$this->http_code} HTTP status code. Expected a 200 or 302 from server."));
 		}
+	}
+
+	/**
+	 * Use another CA root certificate
+	 */
+	public function setRootCert($file)
+	{
+		curl_setopt($this->curl_handle, CURLOPT_CAINFO, $file);
+	}
+
+	/**
+	 * Use a client certificate
+	 */
+	public function setClientCert($file, $password = "")
+	{
+		curl_setopt($this->curl_handle, CURLOPT_SSLCERT, $file);
+		curl_setopt($this->curl_handle, CURLOPT_SSLCERTPASSWD, $password);
+	}
+
+	/**
+	 * Use a client certificate
+	 */
+	public function setClientKey($file, $password = "")
+	{
+		curl_setopt($this->curl_handle, CURLOPT_SSLKEY, $file);
+		curl_setopt($this->curl_handle, CURLOPT_SSLKEYPASSWD, $password);
+	}
+
+	/**
+	 * Return cURL error
+	 */
+	public function Error()
+	{
+		return curl_error($this->curl_handle);
+	}
+
+	/**
+	 *
+	 */
+	public function getEffectiveUrl()
+	{
+		return curl_getinfo($this->curl_handle, CURLINFO_EFFECTIVE_URL);
 	}
 }
